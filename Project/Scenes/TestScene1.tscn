@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2k6uud7pkc4"]
+[gd_scene load_steps=10 format=3 uid="uid://b2k6uud7pkc4"]
 
 [ext_resource type="Texture2D" uid="uid://u8ju6giigs0w" path="res://Assets/Art/Backgrounds/test_tilemap.png" id="1_v1c31"]
 [ext_resource type="PackedScene" uid="uid://bqgy81eendufk" path="res://Assets/Game-Objects/Characters/Player.tscn" id="2_c7e15"]
 [ext_resource type="PackedScene" uid="uid://cnbu1eucygsch" path="res://Assets/Game-Objects/Gameplay/Spike.tscn" id="2_raeh4"]
+[ext_resource type="PackedScene" uid="uid://bixlt3vjvjg6v" path="res://Assets/Game-Objects/Gameplay/Checkpoint.tscn" id="3_fh8h5"]
 [ext_resource type="PackedScene" uid="uid://fky6pwsaeu0y" path="res://Assets/Game-Objects/Gameplay/Spring.tscn" id="3_npsx1"]
 [ext_resource type="PackedScene" uid="uid://lebttegc47q0" path="res://Assets/Game-Objects/Gameplay/MainCamera.tscn" id="4_fy35b"]
 
@@ -47,6 +48,7 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_y7cvf"]
 resource_name = "Game Objects"
 scenes/1/scene = ExtResource("2_raeh4")
+scenes/2/scene = ExtResource("3_fh8h5")
 scenes/3/scene = ExtResource("3_npsx1")
 
 [sub_resource type="TileSet" id="TileSet_lhlpv"]
@@ -81,3 +83,12 @@ limit_left = 0
 limit_top = 0
 drag_top_margin = 0.8
 tilemap = NodePath("../../TileMap")
+
+[connection signal="body_entered" from="TileMap/Checkpoint" to="TileMap/Checkpoint" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/Spike" to="TileMap/Spike" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/@Spike@449607" to="TileMap/@Spike@449607" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/@Spike@449608" to="TileMap/@Spike@449608" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/@Checkpoint@449609" to="TileMap/@Checkpoint@449609" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/Spring" to="TileMap/Spring" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/@Spring@449610" to="TileMap/@Spring@449610" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="TileMap/@Spring@449611" to="TileMap/@Spring@449611" method="_on_body_entered" flags=18]
