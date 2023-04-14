@@ -9,11 +9,9 @@ extends Camera2D
 func _ready():
 	var mapRect = tilemap.get_used_rect()
 	var tileSize = tilemap.cell_quadrant_size
-	print(str(tileSize))
 	var worldSizeInPixels = mapRect.size * tileSize
 	limit_right = worldSizeInPixels.x
 	limit_bottom = worldSizeInPixels.y
-	print(str(limit_right) + " , " + str(limit_bottom))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

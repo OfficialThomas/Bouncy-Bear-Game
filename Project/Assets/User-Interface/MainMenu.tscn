@@ -1,0 +1,297 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw267dtajevkv"]
+
+[ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_y3vd2"]
+[ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_ensvs"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainScreen" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleBox" type="NinePatchRect" parent="MainScreen"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("1_y3vd2")
+region_rect = Rect2(-353, -89.5, 507, 233)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/TitleBox"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Bouncy Bear[/center]"
+fit_content = true
+
+[node name="Space2" type="MarginContainer" parent="MainScreen"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="StartSettings" type="HBoxContainer" parent="MainScreen"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainScreen/StartSettings"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Start Game" type="TextureButton" parent="MainScreen/StartSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/StartSettings/Start Game"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Start Game[/center]"
+fit_content = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="MainScreen/StartSettings"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Settings" type="TextureButton" parent="MainScreen/StartSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/StartSettings/Settings"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Settings[/center]"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainScreen/StartSettings"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Space3" type="MarginContainer" parent="MainScreen"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="CreditsExit" type="HBoxContainer" parent="MainScreen"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainScreen/CreditsExit"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Credits" type="TextureButton" parent="MainScreen/CreditsExit"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/CreditsExit/Credits"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Credits[/center]"
+fit_content = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="MainScreen/CreditsExit"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Exit Game" type="TextureButton" parent="MainScreen/CreditsExit"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/CreditsExit/Exit Game"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Exit Game[/center]"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainScreen/CreditsExit"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Space4" type="MarginContainer" parent="MainScreen"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="LevelSelect" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="AreaLogo" type="NinePatchRect" parent="LevelSelect"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_y3vd2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/AreaLogo"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Area 1[center]"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Levels" type="HBoxContainer" parent="LevelSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/Levels"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="LevelSelect/Levels"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="LevelSelect/Levels"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 5
+
+[node name="TextureButton3" type="TextureButton" parent="LevelSelect/Levels"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_ensvs")
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="LevelSelect/Levels"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="LevelSelect"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Return" type="HBoxContainer" parent="LevelSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/Return"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="ReturnMain" type="TextureButton" parent="LevelSelect/Return"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_y3vd2")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/ReturnMain"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]<[/center]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnMain2" type="TextureButton" parent="LevelSelect/Return"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_y3vd2")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/ReturnMain2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]>[/center]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="LevelSelect/Return"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="LevelSelect"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2

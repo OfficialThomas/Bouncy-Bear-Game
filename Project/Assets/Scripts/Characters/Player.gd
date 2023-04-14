@@ -10,8 +10,14 @@ const JUMP_VELOCITY = -1075
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# Gameplay elements
 var bounce = 0
 var b_multi = 1.25
+var checkpoint
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	checkpoint = transform # Player start point is first checkpoint
 
 func _physics_process(delta):
 	# Gravity and Auto Jump
