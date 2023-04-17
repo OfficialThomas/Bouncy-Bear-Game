@@ -16,6 +16,7 @@ extends ColorRect
 
 
 # Just in case I use this
+# Grabs the base node of the scene (2d node or control node)
 @onready var root = get_node("../../")
 
 
@@ -23,6 +24,7 @@ extends ColorRect
 func _ready():
 	# Plays the animation backward to fade in
 #	print(root.name) # Here for if I want to make the animation not play on a scene
+	get_tree().paused = false
 	_anim_player.play("SlideLeft")
 
 

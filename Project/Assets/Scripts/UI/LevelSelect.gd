@@ -39,8 +39,8 @@ func _on_return_pressed():
 func _on_next_pressed():
 #	print("Transitioning to: " + next_scene)
 	if (next_scene == ""):
-#		print("Scene name empty. Transitioning to credits.")
-		pass #TODO: ADD credits scene
+#		print("Scene name empty. Transitioning to main menu.")
+		transition.transition_to("res://Scenes/StartupMenu.tscn")
 	else:
 		transition.transition_to(next_scene)
 
