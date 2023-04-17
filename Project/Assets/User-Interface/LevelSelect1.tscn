@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm0aqouypj4pm"]
+[gd_scene load_steps=4 format=3 uid="uid://cm0aqouypj4pm"]
 
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_3gm3f"]
+[ext_resource type="Script" path="res://Assets/Scripts/UI/LevelSelect.gd" id="1_mfada"]
 [ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_rn1ao"]
 
 [node name="LevelSelect1" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mfada")
 
 [node name="LevelSelect" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -54,19 +56,19 @@ alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="LevelSelect/Levels"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="LevelSelect/Levels"]
+[node name="Level1" type="TextureButton" parent="LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("2_rn1ao")
 stretch_mode = 5
 
-[node name="TextureButton2" type="TextureButton" parent="LevelSelect/Levels"]
+[node name="Level2" type="TextureButton" parent="LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("2_rn1ao")
 stretch_mode = 5
 
-[node name="TextureButton3" type="TextureButton" parent="LevelSelect/Levels"]
+[node name="Level3" type="TextureButton" parent="LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("2_rn1ao")
@@ -90,13 +92,13 @@ alignment = 1
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="ReturnMain" type="TextureButton" parent="LevelSelect/Return"]
+[node name="Return" type="TextureButton" parent="LevelSelect/Return"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("1_3gm3f")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/ReturnMain"]
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/Return"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -104,18 +106,19 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "[center]<[/center]"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="ReturnMain2" type="TextureButton" parent="LevelSelect/Return"]
+[node name="Next" type="TextureButton" parent="LevelSelect/Return"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("1_3gm3f")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/ReturnMain2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/Next"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -123,6 +126,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "[center]>[/center]"
 fit_content = true
@@ -135,3 +139,9 @@ layout_mode = 2
 [node name="MarginContainer3" type="MarginContainer" parent="LevelSelect"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+
+[connection signal="pressed" from="LevelSelect/Levels/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="LevelSelect/Return/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="LevelSelect/Return/Next" to="." method="_on_next_pressed"]

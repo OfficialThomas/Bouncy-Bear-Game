@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_aol42"]
 
 [node name="StartupMenu" type="Node2D"]
+position = Vector2(-2, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="UI" instance=ExtResource("1_fjilo")]
 
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("2_aol42")]
-offset_left = 1168.0
-offset_right = 1168.0
+offset_right = 0.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

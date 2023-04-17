@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Gameplay elements
 var bounce = 0
-var b_multi = 1.25
+var b_multi = 1.5
 var checkpoint
 
 # Called when the node enters the scene tree for the first time.
