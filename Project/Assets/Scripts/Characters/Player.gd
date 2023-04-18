@@ -13,11 +13,16 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Gameplay elements
 var bounce = 0
 var b_multi = 1.5
-var checkpoint
+@export var checkpoint : Area2D
+var respawn
+@onready var checkpoint_text = get_node("../../UI/CheckpointNotif")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	checkpoint = transform # Player start point is first checkpoint
+	if checkpoint == null:
+		respawn = position
+	else:
+		respawn = checkpoint.position
 
 func _physics_process(delta):
 	# Gravity and Auto Jump
@@ -46,3 +51,6 @@ func _physics_process(delta):
 		sprite.play("foward")
 
 	move_and_slide()
+
+func checkpoint_activated():
+	checkpoint_text.checkpoint_activated()

@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://xuw0sdhhnivd"]
+
+[ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_55o7y"]
+[ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/CreditsMenu.gd" id="1_ftwfd"]
+[ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_kt0c4"]
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftwfd")
+
+[node name="Contents" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="NamePlate" type="HBoxContainer" parent="Contents"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 100
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Contents/NamePlate"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_55o7y")
+
+[node name="CreditNames" type="VBoxContainer" parent="Contents/NamePlate/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Thomas" type="RichTextLabel" parent="Contents/NamePlate/NinePatchRect/CreditNames"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Bouncy Bear by Thomas Noell[/center]"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Contents/NamePlate/NinePatchRect/CreditNames"]
+layout_mode = 2
+
+[node name="Godot" type="RichTextLabel" parent="Contents/NamePlate/NinePatchRect/CreditNames"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Made using Godot 4[/center]"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Contents"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Contents"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 375
+
+[node name="MarginContainer" type="MarginContainer" parent="Contents/Buttons"]
+layout_mode = 2
+
+[node name="MainMenu" type="TextureButton" parent="Contents/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_kt0c4")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Contents/Buttons/MainMenu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Main Menu[/center]"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Contents/Buttons"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Contents"]
+layout_mode = 2
+
+[connection signal="pressed" from="Contents/Buttons/MainMenu" to="." method="_on_main_menu_pressed"]

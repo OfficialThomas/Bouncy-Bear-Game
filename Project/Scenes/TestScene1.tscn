@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2k6uud7pkc4"]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Texture2D" uid="uid://u8ju6giigs0w" path="res://Assets/Art/Backgrounds/test_tilemap.png" id="1_v1c31"]
 [ext_resource type="PackedScene" uid="uid://bqgy81eendufk" path="res://Assets/Game-Objects/Characters/Player.tscn" id="2_c7e15"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://fky6pwsaeu0y" path="res://Assets/Game-Objects/Gameplay/Spring.tscn" id="3_npsx1"]
 [ext_resource type="PackedScene" uid="uid://lebttegc47q0" path="res://Assets/Game-Objects/Gameplay/MainCamera.tscn" id="4_fy35b"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="7_0n8xb"]
-[ext_resource type="PackedScene" uid="uid://dgqa0o46e6ke0" path="res://Assets/User-Interface/PauseMenu.tscn" id="7_jpn83"]
+[ext_resource type="PackedScene" path="res://Assets/User-Interface/Notifications/CheckpointNotif.tscn" id="7_6rlur"]
+[ext_resource type="PackedScene" path="res://Assets/User-Interface/Menus/PauseMenu.tscn" id="7_jpn83"]
+[ext_resource type="PackedScene" path="res://Assets/User-Interface/Notifications/LevelName.tscn" id="7_rj36o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1ojs"]
 texture = ExtResource("1_v1c31")
@@ -90,6 +92,12 @@ tilemap = NodePath("../../TileMap")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="CheckpointNotif" parent="UI" instance=ExtResource("7_6rlur")]
+
+[node name="LevelName" parent="UI" instance=ExtResource("7_rj36o")]
+text_name = "[center]Area 1 - 0
+The Playground[center]"
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("7_jpn83")]
 level_select = "res://Scenes/Area1Scene.tscn"
 metadata/_edit_use_anchors_ = true
@@ -98,9 +106,9 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Gameplay/TileMap/Checkpoint" to="Gameplay/TileMap/Checkpoint" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Gameplay/TileMap/Spike" to="Gameplay/TileMap/Spike" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@228413" to="Gameplay/TileMap/@Spike@228413" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@228414" to="Gameplay/TileMap/@Spike@228414" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@228415" to="Gameplay/TileMap/@Checkpoint@228415" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@49239" to="Gameplay/TileMap/@Spike@49239" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@49240" to="Gameplay/TileMap/@Spike@49240" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@49241" to="Gameplay/TileMap/@Checkpoint@49241" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Gameplay/TileMap/Spring" to="Gameplay/TileMap/Spring" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@228416" to="Gameplay/TileMap/@Spring@228416" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@228417" to="Gameplay/TileMap/@Spring@228417" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@49242" to="Gameplay/TileMap/@Spring@49242" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@49243" to="Gameplay/TileMap/@Spring@49243" method="_on_body_entered" flags=18]

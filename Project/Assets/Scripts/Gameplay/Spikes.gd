@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var player = get_node("../../Player")
+
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -13,4 +15,5 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		pass # Return player to checkpoint
+		player.position.x = player.respawn.x
+		player.position.y = player.respawn.y - 500

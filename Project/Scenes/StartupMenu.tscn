@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds4s3vcy60rdm"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bw267dtajevkv" path="res://Assets/User-Interface/MainMenu.tscn" id="1_fjilo"]
+[ext_resource type="PackedScene" path="res://Assets/User-Interface/Menus/MainMenu.tscn" id="1_fjilo"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_aol42"]
 
 [node name="StartupMenu" type="Node2D"]

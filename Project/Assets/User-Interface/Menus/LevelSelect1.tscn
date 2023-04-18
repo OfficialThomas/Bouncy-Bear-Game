@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm0aqouypj4pm"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_3gm3f"]
-[ext_resource type="Script" path="res://Assets/Scripts/UI/LevelSelect.gd" id="1_mfada"]
+[ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/LevelSelect.gd" id="1_mfada"]
 [ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_rn1ao"]
 
 [node name="LevelSelect1" type="Control"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw267dtajevkv"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://Assets/Scripts/UI/MainMenu.gd" id="1_7x3am"]
+[ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/MainMenu.gd" id="1_7x3am"]
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_y3vd2"]
 [ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_ensvs"]
 
@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7x3am")
 next_scene = "res://Scenes/Area1Scene.tscn"
+credits_scene = "res://Scenes/CreditsScene.tscn"
 
 [node name="MainScreen" type="VBoxContainer" parent="."]
 layout_mode = 1
