@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://bwrc5mqn85afh"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Notifications/CheckpointPopup.gd" id="1_brl5c"]
 
@@ -50,6 +50,7 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "[center][wave]Checkpoint![/wave][/center]"
 fit_content = true
