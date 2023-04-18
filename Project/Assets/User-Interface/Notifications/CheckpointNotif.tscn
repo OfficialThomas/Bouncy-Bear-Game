@@ -52,7 +52,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 1
 bbcode_enabled = true
-text = "[center][wave]Checkpoint![/wave][/center]"
+text = "[center][wave]CHECKPOINT[/wave][/center]"
 fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/RichTextLabel"]

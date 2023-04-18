@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dnqytqk4s34r4"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/MainMenu.gd" id="1_7x3am"]
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_y3vd2"]
@@ -140,7 +140,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 bbcode_enabled = true
-text = "[center]Credits[/center]"
+text = "[center]Credits and
+Controls Guide[/center]"
 fit_content = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="MainScreen/CreditsExit"]

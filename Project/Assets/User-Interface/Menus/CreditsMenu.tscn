@@ -59,6 +59,16 @@ bbcode_enabled = true
 text = "[center]Made using Godot 4[/center]"
 fit_content = true
 
+[node name="MarginContainer2" type="MarginContainer" parent="Contents/NamePlate/NinePatchRect/CreditNames"]
+layout_mode = 2
+
+[node name="Controls" type="RichTextLabel" parent="Contents/NamePlate/NinePatchRect/CreditNames"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Movement: Left and Right Arrow Keys
+Pause Game: Escape Key[/center]"
+fit_content = true
+
 [node name="MarginContainer2" type="MarginContainer" parent="Contents"]
 layout_mode = 2
 
