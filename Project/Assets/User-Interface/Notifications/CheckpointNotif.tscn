@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwrc5mqn85afh"]
+[gd_scene load_steps=5 format=3 uid="uid://bwrc5mqn85afh"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Notifications/CheckpointPopup.gd" id="1_brl5c"]
+[ext_resource type="FontFile" uid="uid://elp7o4t3i2jp" path="res://Assets/User-Interface/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="2_06a6n"]
 
 [sub_resource type="Animation" id="Animation_bnge3"]
 resource_name = "FadeIn"
@@ -51,6 +52,8 @@ layout_mode = 2
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_06a6n")
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center][wave]CHECKPOINT[/wave][/center]"
 fit_content = true

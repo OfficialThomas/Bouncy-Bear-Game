@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpt6gbrb31gmr"]
+
+[ext_resource type="PackedScene" uid="uid://2un2x0kb8gc0" path="res://Assets/User-Interface/Menus/GuideMenu.tscn" id="1_n2pic"]
+[ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_emkc1"]
+
+[node name="GuideScene" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GuideMenu" parent="UI" instance=ExtResource("1_n2pic")]
+
+[node name="SceneTransitionRect" parent="UI" instance=ExtResource("2_emkc1")]

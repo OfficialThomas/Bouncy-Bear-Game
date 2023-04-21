@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnqytqk4s34r4"]
+[gd_scene load_steps=4 format=3 uid="uid://s7e8nvikdbsw"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/MainMenu.gd" id="1_7x3am"]
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_y3vd2"]
-[ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_ensvs"]
+[ext_resource type="Theme" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_pm8mg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,22 +15,36 @@ script = ExtResource("1_7x3am")
 next_scene = "res://Scenes/Area1Scene.tscn"
 credits_scene = "res://Scenes/CreditsScene.tscn"
 
-[node name="MainScreen" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 18
+metadata/_edit_use_anchors_ = true
 
-[node name="TitleBox" type="NinePatchRect" parent="MainScreen"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
+
+[node name="MainScreen" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MainScreen"]
+layout_mode = 2
+
+[node name="TitleBox" type="NinePatchRect" parent="HBoxContainer/MainScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
 texture = ExtResource("1_y3vd2")
 region_rect = Rect2(-353, -89.5, 507, 233)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/TitleBox"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MainScreen/TitleBox"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -44,142 +58,74 @@ bbcode_enabled = true
 text = "[center]Bouncy Bear[/center]"
 fit_content = true
 
-[node name="Space2" type="MarginContainer" parent="MainScreen"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-
-[node name="StartSettings" type="HBoxContainer" parent="MainScreen"]
+[node name="StartSettings" type="VBoxContainer" parent="HBoxContainer/MainScreen"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+theme_override_constants/separation = 190
+alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MainScreen/StartSettings"]
-custom_minimum_size = Vector2(125, 0)
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MainScreen/StartSettings"]
+layout_mode = 2
+
+[node name="Start Game" type="Button" parent="HBoxContainer/MainScreen/StartSettings"]
+custom_minimum_size = Vector2(310, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_pm8mg")
+theme_override_font_sizes/font_size = 40
+text = "Start
+Game"
 
-[node name="Start Game" type="TextureButton" parent="MainScreen/StartSettings"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("2_ensvs")
-stretch_mode = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/StartSettings/Start Game"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Start Game[/center]"
-fit_content = true
-
-[node name="MarginContainer3" type="MarginContainer" parent="MainScreen/StartSettings"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Settings" type="TextureButton" parent="MainScreen/StartSettings"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("2_ensvs")
-stretch_mode = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/StartSettings/Settings"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Settings[/center]"
-fit_content = true
-
-[node name="MarginContainer2" type="MarginContainer" parent="MainScreen/StartSettings"]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Space3" type="MarginContainer" parent="MainScreen"]
-custom_minimum_size = Vector2(0, 25)
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MainScreen/StartSettings"]
 layout_mode = 2
 
-[node name="CreditsExit" type="HBoxContainer" parent="MainScreen"]
+[node name="CreditsExit" type="VBoxContainer" parent="HBoxContainer/MainScreen"]
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MainScreen/CreditsExit"]
-custom_minimum_size = Vector2(125, 0)
+[node name="Settings" type="Button" parent="HBoxContainer/MainScreen/CreditsExit"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_pm8mg")
+text = "Settings"
 
-[node name="Credits" type="TextureButton" parent="MainScreen/CreditsExit"]
+[node name="ControlGuide" type="Button" parent="HBoxContainer/MainScreen/CreditsExit"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_ensvs")
-stretch_mode = 0
+size_flags_vertical = 3
+theme = ExtResource("3_pm8mg")
+text = "Control
+Guide"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/CreditsExit/Credits"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Credits and
-Controls Guide[/center]"
-fit_content = true
-
-[node name="MarginContainer3" type="MarginContainer" parent="MainScreen/CreditsExit"]
-custom_minimum_size = Vector2(50, 0)
+[node name="Credits" type="Button" parent="HBoxContainer/MainScreen/CreditsExit"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_pm8mg")
+text = "Credits"
 
-[node name="Exit Game" type="TextureButton" parent="MainScreen/CreditsExit"]
+[node name="Exit Game" type="Button" parent="HBoxContainer/MainScreen/CreditsExit"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_ensvs")
-stretch_mode = 0
+size_flags_vertical = 3
+theme = ExtResource("3_pm8mg")
+text = "Exit 
+Game"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainScreen/CreditsExit/Exit Game"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Exit Game[/center]"
-fit_content = true
-
-[node name="MarginContainer2" type="MarginContainer" parent="MainScreen/CreditsExit"]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Space4" type="MarginContainer" parent="MainScreen"]
-custom_minimum_size = Vector2(0, 50)
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MainScreen"]
 layout_mode = 2
 
-[connection signal="pressed" from="MainScreen/StartSettings/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="MainScreen/StartSettings/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MainScreen/CreditsExit/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MainScreen/CreditsExit/Exit Game" to="." method="_on_exit_game_pressed"]
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/MainScreen/StartSettings/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainScreen/CreditsExit/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainScreen/CreditsExit/ControlGuide" to="." method="_on_control_guide_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainScreen/CreditsExit/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainScreen/CreditsExit/Exit Game" to="." method="_on_exit_game_pressed"]

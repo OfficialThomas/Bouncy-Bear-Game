@@ -7,23 +7,14 @@ extends Control
 
 @export_file("*.tscn") var next_scene : String
 
-# My name in the credits
-@onready var _thomas = $VBoxContainer/Contents/Panel/CreditNames/Thomas
-@onready var _godot = $VBoxContainer/Contents/Panel/CreditNames/Godot
-
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	_change_code(3)
+#func _ready():
+#	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta):
 #	pass
-
-func _change_code(delay: float):
-	await get_tree().create_timer(delay).timeout
-	_thomas.text = "[center]Bouncy Bear by [rainbow][wave]Thomas Noell[/wave][/rainbow][/center]"
-	_godot.text = "[center][tornado]Made using Godot 4[tornado][center]"
 
 
 func _on_main_menu_pressed():

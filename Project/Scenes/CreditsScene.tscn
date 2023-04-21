@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bnx6w6hrt0s8y"]
 
-[ext_resource type="PackedScene" path="res://Assets/User-Interface/Menus/CreditsMenu.tscn" id="1_f8eq5"]
+[ext_resource type="PackedScene" uid="uid://xuw0sdhhnivd" path="res://Assets/User-Interface/Menus/CreditsMenu.tscn" id="1_f8eq5"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_nnci0"]
 
 [node name="Area1Scene" type="Node2D"]

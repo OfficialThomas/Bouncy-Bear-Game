@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://yo1l7bus0tca"]
 
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_3gm3f"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/LevelSelect.gd" id="1_mfada"]
-[ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_rn1ao"]
+[ext_resource type="Theme" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_pxgn7"]
 
 [node name="LevelSelect1" type="Control"]
 layout_mode = 3
@@ -13,22 +13,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mfada")
 
-[node name="LevelSelect" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 5
-alignment = 1
+theme_override_constants/separation = 18
+metadata/_edit_use_anchors_ = true
 
-[node name="AreaLogo" type="NinePatchRect" parent="LevelSelect"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="LevelSelect" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 18
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/LevelSelect"]
+layout_mode = 2
+
+[node name="AreaLogo" type="NinePatchRect" parent="VBoxContainer/LevelSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 texture = ExtResource("1_3gm3f")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/AreaLogo"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/LevelSelect/AreaLogo"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -42,106 +58,64 @@ bbcode_enabled = true
 text = "[center]Area 1[center]"
 fit_content = true
 
-[node name="MarginContainer" type="MarginContainer" parent="LevelSelect"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-
-[node name="Levels" type="HBoxContainer" parent="LevelSelect"]
+[node name="Levels" type="HBoxContainer" parent="VBoxContainer/LevelSelect"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 50
+theme_override_constants/separation = 75
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/Levels"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 
-[node name="Level1" type="TextureButton" parent="LevelSelect/Levels"]
+[node name="Level1" type="Button" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_rn1ao")
-stretch_mode = 5
+theme = ExtResource("3_pxgn7")
+text = "1"
 
-[node name="Level2" type="TextureButton" parent="LevelSelect/Levels"]
+[node name="Level2" type="Button" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_rn1ao")
-stretch_mode = 5
+theme = ExtResource("3_pxgn7")
+text = "2"
 
-[node name="Level3" type="TextureButton" parent="LevelSelect/Levels"]
+[node name="Level3" type="Button" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_rn1ao")
-stretch_mode = 5
+theme = ExtResource("3_pxgn7")
+text = "3"
 
-[node name="MarginContainer2" type="MarginContainer" parent="LevelSelect/Levels"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="LevelSelect"]
-custom_minimum_size = Vector2(0, 50)
+[node name="Return" type="HBoxContainer" parent="VBoxContainer/LevelSelect"]
 layout_mode = 2
-
-[node name="Return" type="HBoxContainer" parent="LevelSelect"]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 740
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/Return"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-
-[node name="Return" type="TextureButton" parent="LevelSelect/Return"]
+[node name="Return" type="Button" parent="VBoxContainer/LevelSelect/Return"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_3gm3f")
-stretch_mode = 5
+theme = ExtResource("3_pxgn7")
+text = "<"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/Return"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]<[/center]"
-fit_content = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Next" type="TextureButton" parent="LevelSelect/Return"]
+[node name="Next" type="Button" parent="VBoxContainer/LevelSelect/Return"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("1_3gm3f")
-stretch_mode = 5
+theme = ExtResource("3_pxgn7")
+text = ">"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect/Return/Next"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]>[/center]"
-fit_content = true
-metadata/_edit_use_anchors_ = true
-
-[node name="MarginContainer2" type="MarginContainer" parent="LevelSelect/Return"]
-custom_minimum_size = Vector2(100, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/LevelSelect"]
 layout_mode = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="LevelSelect"]
-custom_minimum_size = Vector2(0, 25)
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[connection signal="pressed" from="LevelSelect/Levels/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="LevelSelect/Levels/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="LevelSelect/Levels/Level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="LevelSelect/Return/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="LevelSelect/Return/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelect/Return/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelect/Return/Next" to="." method="_on_next_pressed"]
