@@ -75,4 +75,8 @@ func _on_exit_game_pressed():
 
 func _on_restart_level_pressed():
 #	print("Transitioning to: " + next_scene)
-	transition.transition_to(restart_scene)
+	if (restart_scene == ""):
+#		print("Scene name empty. Transitioning to main menu.")
+		transition.transition_to("res://Scenes/StartupMenu.tscn")
+	else:
+		transition.transition_to(restart_scene)

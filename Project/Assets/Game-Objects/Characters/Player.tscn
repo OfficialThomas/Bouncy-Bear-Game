@@ -32,9 +32,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jki7"]
-radius = 42.4286
-height = 123.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kv1c"]
+size = Vector2(75, 105)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.75, 1.75)
@@ -42,8 +41,8 @@ script = ExtResource("1_rmwdv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cluag")
-animation = &"right"
+animation = &"foward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 2)
-shape = SubResource("CapsuleShape2D_6jki7")
+position = Vector2(-1.5, 5)
+shape = SubResource("RectangleShape2D_0kv1c")

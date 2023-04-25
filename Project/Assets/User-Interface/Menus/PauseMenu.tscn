@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfoqrti7bmk1u"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/PauseMenu.gd" id="1_blvm1"]
-[ext_resource type="Theme" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_8vvce"]
+[ext_resource type="Theme" uid="uid://dt22awaj6rh47" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_8vvce"]
 [ext_resource type="FontFile" uid="uid://elp7o4t3i2jp" path="res://Assets/User-Interface/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="4_424h1"]
 
 [node name="PauseMenu" type="Control"]
