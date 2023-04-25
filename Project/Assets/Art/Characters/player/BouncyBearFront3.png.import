@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnkpcmk6udu8f"
-path="res://.godot/imported/Bouncy Bear1.png-ba38f7c129e430a3aafa8a83de647fa4.ctex"
+uid="uid://dphmym6clv6fm"
+path="res://.godot/imported/BouncyBearFront3.png-da683f6e97d247894d0c0c55d4ad1fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Characters/Bouncy Bear1.png"
-dest_files=["res://.godot/imported/Bouncy Bear1.png-ba38f7c129e430a3aafa8a83de647fa4.ctex"]
+source_file="res://Assets/Art/Characters/player/BouncyBearFront3.png"
+dest_files=["res://.godot/imported/BouncyBearFront3.png-da683f6e97d247894d0c0c55d4ad1fb6.ctex"]
 
 [params]
 
