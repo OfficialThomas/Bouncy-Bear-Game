@@ -13,8 +13,6 @@ extends Camera2D
 # add more songs here
 #@onready var victory =
 
-@onready var player = get_node("../../Gameplay/Player")
-
 var level_end = false
 
 # Called when the node enters the scene tree for the first time.

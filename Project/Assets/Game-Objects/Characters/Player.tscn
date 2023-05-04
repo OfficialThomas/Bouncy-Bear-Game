@@ -86,8 +86,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kv1c"]
-size = Vector2(75, 105)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsw54"]
+radius = 33.5
+height = 112.286
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.75, 1.75)
@@ -99,7 +100,7 @@ animation = &"forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 5)
-shape = SubResource("RectangleShape2D_0kv1c")
+shape = SubResource("CapsuleShape2D_fsw54")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 

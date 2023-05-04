@@ -1,6 +1,7 @@
 extends Control
 
 @onready var transition = get_node("../../UI/SceneTransitionRect")
+@onready var bgm = get_node("../../UI/BGM")
 
 #universal scene change
 @export_file("*.tscn") var next_scene : String

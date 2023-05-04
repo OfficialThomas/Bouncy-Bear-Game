@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://q3cnrfaaaici"]
 
 [ext_resource type="Texture2D" uid="uid://dp4n33dupjfk0" path="res://Assets/Art/Backgrounds/Tilemaps/test_tilemap-Sheet.png" id="1_46tv7"]
-[ext_resource type="Texture2D" uid="uid://dgnav5wf0a0ia" path="res://Assets/Art/Backgrounds/Parallax/test_tilemap35.png" id="1_ehury"]
+[ext_resource type="PackedScene" uid="uid://dv41badn16e5h" path="res://Assets/Game-Objects/Gameplay/ParallaxBackground.tscn" id="1_e0xss"]
 [ext_resource type="PackedScene" uid="uid://bqgy81eendufk" path="res://Assets/Game-Objects/Characters/Player.tscn" id="2_c7e15"]
 [ext_resource type="PackedScene" uid="uid://cnbu1eucygsch" path="res://Assets/Game-Objects/Gameplay/Spike.tscn" id="2_raeh4"]
 [ext_resource type="PackedScene" uid="uid://cpfaecmkkd7au" path="res://Assets/Game-Objects/Gameplay/Checkpoint.tscn" id="3_fh8h5"]
@@ -351,27 +351,7 @@ sources/4 = SubResource("TileSetAtlasSource_7qmnu")
 
 [node name="TestScene1" type="Node2D"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2048, 2048)
-
-[node name="Sprite2D" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-texture_repeat = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 4086.0
-offset_bottom = 4086.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("1_ehury")
-stretch_mode = 1
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_e0xss")]
 
 [node name="Gameplay" type="Node2D" parent="."]
 
@@ -435,45 +415,45 @@ metadata/_edit_use_anchors_ = true
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("7_0n8xb")]
 
 [connection signal="body_entered" from="Gameplay/TileMap/Spring" to="Gameplay/TileMap/Spring" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@121731" to="Gameplay/TileMap/@Spring@121731" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@121732" to="Gameplay/TileMap/@Spring@121732" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@121733" to="Gameplay/TileMap/@Spring@121733" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@121734" to="Gameplay/TileMap/@Spring@121734" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@121735" to="Gameplay/TileMap/@Spring@121735" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spring@121736" to="Gameplay/TileMap/@Spring@121736" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@48640" to="Gameplay/TileMap/@Spring@48640" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@48641" to="Gameplay/TileMap/@Spring@48641" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@48642" to="Gameplay/TileMap/@Spring@48642" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@48643" to="Gameplay/TileMap/@Spring@48643" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@48644" to="Gameplay/TileMap/@Spring@48644" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@48645" to="Gameplay/TileMap/@Spring@48645" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Gameplay/TileMap/Checkpoint" to="Gameplay/TileMap/Checkpoint" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Gameplay/TileMap/Spike" to="Gameplay/TileMap/Spike" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121737" to="Gameplay/TileMap/@Spike@121737" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121738" to="Gameplay/TileMap/@Spike@121738" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121739" to="Gameplay/TileMap/@Spike@121739" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121740" to="Gameplay/TileMap/@Spike@121740" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121741" to="Gameplay/TileMap/@Spike@121741" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@121742" to="Gameplay/TileMap/@Checkpoint@121742" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121743" to="Gameplay/TileMap/@Spike@121743" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121744" to="Gameplay/TileMap/@Spike@121744" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121745" to="Gameplay/TileMap/@Spike@121745" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121746" to="Gameplay/TileMap/@Spike@121746" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121747" to="Gameplay/TileMap/@Spike@121747" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121748" to="Gameplay/TileMap/@Spike@121748" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121749" to="Gameplay/TileMap/@Spike@121749" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121750" to="Gameplay/TileMap/@Spike@121750" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@121751" to="Gameplay/TileMap/@Checkpoint@121751" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121752" to="Gameplay/TileMap/@Spike@121752" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121753" to="Gameplay/TileMap/@Spike@121753" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121754" to="Gameplay/TileMap/@Spike@121754" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121755" to="Gameplay/TileMap/@Spike@121755" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121756" to="Gameplay/TileMap/@Spike@121756" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121757" to="Gameplay/TileMap/@Spike@121757" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121758" to="Gameplay/TileMap/@Spike@121758" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121759" to="Gameplay/TileMap/@Spike@121759" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@121760" to="Gameplay/TileMap/@Checkpoint@121760" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48646" to="Gameplay/TileMap/@Spike@48646" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48647" to="Gameplay/TileMap/@Spike@48647" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48648" to="Gameplay/TileMap/@Spike@48648" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48649" to="Gameplay/TileMap/@Spike@48649" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48650" to="Gameplay/TileMap/@Spike@48650" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@48651" to="Gameplay/TileMap/@Checkpoint@48651" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48652" to="Gameplay/TileMap/@Spike@48652" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48653" to="Gameplay/TileMap/@Spike@48653" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48654" to="Gameplay/TileMap/@Spike@48654" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48655" to="Gameplay/TileMap/@Spike@48655" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48656" to="Gameplay/TileMap/@Spike@48656" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48657" to="Gameplay/TileMap/@Spike@48657" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48658" to="Gameplay/TileMap/@Spike@48658" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48659" to="Gameplay/TileMap/@Spike@48659" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@48660" to="Gameplay/TileMap/@Checkpoint@48660" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48661" to="Gameplay/TileMap/@Spike@48661" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48662" to="Gameplay/TileMap/@Spike@48662" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48663" to="Gameplay/TileMap/@Spike@48663" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48664" to="Gameplay/TileMap/@Spike@48664" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48665" to="Gameplay/TileMap/@Spike@48665" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48666" to="Gameplay/TileMap/@Spike@48666" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48667" to="Gameplay/TileMap/@Spike@48667" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48668" to="Gameplay/TileMap/@Spike@48668" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@48669" to="Gameplay/TileMap/@Checkpoint@48669" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Gameplay/TileMap/EndLevel" to="Gameplay/TileMap/EndLevel" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121761" to="Gameplay/TileMap/@Spike@121761" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121762" to="Gameplay/TileMap/@Spike@121762" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121763" to="Gameplay/TileMap/@Spike@121763" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121764" to="Gameplay/TileMap/@Spike@121764" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121765" to="Gameplay/TileMap/@Spike@121765" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121766" to="Gameplay/TileMap/@Spike@121766" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121767" to="Gameplay/TileMap/@Spike@121767" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@Spike@121768" to="Gameplay/TileMap/@Spike@121768" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Gameplay/TileMap/@EndLevel@121769" to="Gameplay/TileMap/@EndLevel@121769" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48670" to="Gameplay/TileMap/@Spike@48670" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48671" to="Gameplay/TileMap/@Spike@48671" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48672" to="Gameplay/TileMap/@Spike@48672" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48673" to="Gameplay/TileMap/@Spike@48673" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48674" to="Gameplay/TileMap/@Spike@48674" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48675" to="Gameplay/TileMap/@Spike@48675" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48676" to="Gameplay/TileMap/@Spike@48676" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@48677" to="Gameplay/TileMap/@Spike@48677" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@EndLevel@48678" to="Gameplay/TileMap/@EndLevel@48678" method="_on_body_entered" flags=18]

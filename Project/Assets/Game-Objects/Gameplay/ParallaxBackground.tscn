@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv41badn16e5h"]
+
+[ext_resource type="Texture2D" uid="uid://dgnav5wf0a0ia" path="res://Assets/Art/Backgrounds/Parallax/test_tilemap35.png" id="1_8r41l"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2048, 2048)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer"]
+texture_repeat = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 4086.0
+offset_bottom = 4086.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_8r41l")
+stretch_mode = 1
