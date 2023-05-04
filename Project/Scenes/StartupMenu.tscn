@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c17727gx8corc"]
+[gd_scene load_steps=4 format=3 uid="uid://c17727gx8corc"]
 
 [ext_resource type="PackedScene" uid="uid://s7e8nvikdbsw" path="res://Assets/User-Interface/Menus/MainMenu.tscn" id="1_fjilo"]
+[ext_resource type="PackedScene" uid="uid://iu8cr7tu0psa" path="res://Assets/User-Interface/BGM.tscn" id="1_i4kju"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_aol42"]
 
 [node name="StartupMenu" type="Node2D"]
 position = Vector2(-2, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="BGM" parent="UI" instance=ExtResource("1_i4kju")]
 
 [node name="MainMenu" parent="UI" instance=ExtResource("1_fjilo")]
 guide_scene = "res://Scenes/GuideScene.tscn"

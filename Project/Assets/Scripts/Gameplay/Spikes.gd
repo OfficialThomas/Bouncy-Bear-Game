@@ -15,5 +15,6 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		player.player_respawn()
 		player.position.x = player.respawn.x
-		player.position.y = player.respawn.y - 500
+		player.position.y = player.respawn.y - 100

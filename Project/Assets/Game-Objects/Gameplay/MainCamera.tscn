@@ -13,3 +13,6 @@ drag_top_margin = 0.0
 drag_right_margin = 0.1
 drag_bottom_margin = 0.0
 script = ExtResource("1_5dccj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
