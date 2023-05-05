@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var sfx = $Sfx
 var jumpsfx = preload("res://Assets/Audio/Sfx/jump_sfx.wav")
 var hurtsfx = preload("res://Assets/Audio/Sfx/hurt_sfx.wav")
+var checksfx = preload("res://Assets/Audio/Sfx/checkpoint_sfx.wav")
 
 # Jumping and moving
 const  SPEED = 400.0
@@ -66,6 +67,8 @@ func animatior(fallingSpeed):
 	sprite.play(animation)
 
 func checkpoint_activated():
+	sfx.stream = checksfx
+	sfx.play()
 	checkpoint_text.checkpoint_activated()
 
 func player_respawn():

@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpsdk4tbfemq0"]
+[gd_scene load_steps=5 format=3 uid="uid://dpsdk4tbfemq0"]
 
 [ext_resource type="PackedScene" uid="uid://iu8cr7tu0psa" path="res://Assets/User-Interface/BGM.tscn" id="1_3fhby"]
+[ext_resource type="PackedScene" uid="uid://jfhhvp4bcj4j" path="res://Assets/User-Interface/Menu_Level.tscn" id="1_gsagq"]
 [ext_resource type="PackedScene" uid="uid://yo1l7bus0tca" path="res://Assets/User-Interface/Menus/LevelSelect1.tscn" id="1_te5k7"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_5jq1a"]
 
 [node name="Area1Scene" type="Node2D"]
+
+[node name="MenuLevel" parent="." instance=ExtResource("1_gsagq")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 

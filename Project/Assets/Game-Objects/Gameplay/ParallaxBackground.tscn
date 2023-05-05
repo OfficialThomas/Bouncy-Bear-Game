@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv41badn16e5h"]
+[gd_scene load_steps=3 format=3 uid="uid://dv41badn16e5h"]
 
+[ext_resource type="Script" path="res://Assets/Scripts/Gameplay/ParallaxBG.gd" id="1_4r8f0"]
 [ext_resource type="Texture2D" uid="uid://dgnav5wf0a0ia" path="res://Assets/Art/Backgrounds/Parallax/test_tilemap35.png" id="1_8r41l"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_4r8f0")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.5, 0.5)

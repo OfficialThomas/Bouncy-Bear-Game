@@ -14,6 +14,7 @@ extends Control
 # Grabbing ui elements
 @onready var levelname = get_node("../../UI/LevelName")
 @onready var pause = get_node("../../UI/PauseMenu")
+@onready var bgm = get_node("../../UI/BGM")
 
 # Universal scene change (5 button layout)
 @export_file("*.tscn") var level_select : String
@@ -39,6 +40,7 @@ func _ready():
 #	pass
 
 func endCard():
+	bgm.end_level()
 	pause.visible = false
 	get_tree().paused = true #have to unpause when we press any buttons
 	visible = true
