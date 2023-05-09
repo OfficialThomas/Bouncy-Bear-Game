@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7yr0rgy130wd"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Gameplay/EndLevel.gd" id="1_jycmh"]
-[ext_resource type="Texture2D" uid="uid://3nidym386d2c" path="res://Assets/Art/Props/test/test_object3.png" id="2_53cmy"]
+[ext_resource type="Texture2D" uid="uid://b7qsq7b7mrfjh" path="res://Assets/Art/Props/gameplay/wingoal.png" id="2_wvk6r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hx452"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_53cmy")
+"texture": ExtResource("2_wvk6r")
 }],
 "loop": true,
 "name": &"default",
@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1asda"]
-size = Vector2(128, 128)
+size = Vector2(340, 128)
 
 [node name="EndLevel" type="Area2D"]
 script = ExtResource("1_jycmh")
@@ -24,6 +24,7 @@ script = ExtResource("1_jycmh")
 sprite_frames = SubResource("SpriteFrames_hx452")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_1asda")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

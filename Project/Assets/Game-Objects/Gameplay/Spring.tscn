@@ -1,30 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://fky6pwsaeu0y"]
+[gd_scene load_steps=7 format=3 uid="uid://fky6pwsaeu0y"]
 
-[ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_p0prx"]
 [ext_resource type="Script" path="res://Assets/Scripts/Gameplay/Spring.gd" id="1_xymbq"]
+[ext_resource type="Texture2D" uid="uid://dp6h0enkj1gga" path="res://Assets/Art/Props/gameplay/spring1.png" id="2_qgv43"]
+[ext_resource type="Texture2D" uid="uid://dto2ku2hxx3mg" path="res://Assets/Art/Props/gameplay/spring2.png" id="3_3l04t"]
+[ext_resource type="Texture2D" uid="uid://b1dr4sq1d61p6" path="res://Assets/Art/Props/gameplay/spring3.png" id="4_itjru"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tx158"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_p0prx")
+"texture": ExtResource("2_qgv43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3l04t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_itjru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3l04t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qgv43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3l04t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qgv43")
 }],
 "loop": true,
-"name": &"default",
+"name": &"bounce",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qgv43")
+}],
+"loop": true,
+"name": &"nobounce",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35ls7"]
-size = Vector2(130, 128)
+size = Vector2(193, 115)
 
 [node name="Spring" type="Area2D"]
 script = ExtResource("1_xymbq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_tx158")
+animation = &"nobounce"
+frame_progress = 0.145834
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-0.5, -38.5)
 shape = SubResource("RectangleShape2D_35ls7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
