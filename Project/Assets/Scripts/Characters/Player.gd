@@ -21,6 +21,7 @@ var b_multi = 1.5
 @export var checkpoint : Area2D
 var respawn
 @onready var checkpoint_text = get_node("../../UI/CheckpointNotif")
+var coins = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -70,6 +71,11 @@ func checkpoint_activated():
 	sfx.stream = checksfx
 	sfx.play()
 	checkpoint_text.checkpoint_activated()
+
+func collect_coin():
+	sfx.stream = checksfx
+	sfx.play()
+	coins += 1
 
 func player_respawn():
 	sfx.stream = hurtsfx

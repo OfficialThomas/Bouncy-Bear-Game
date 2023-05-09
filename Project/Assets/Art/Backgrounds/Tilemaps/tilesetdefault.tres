@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpfaecmkkd7au" path="res://Assets/Game-Objects/Gameplay/Checkpoint.tscn" id="3_gunpp"]
 [ext_resource type="PackedScene" uid="uid://fky6pwsaeu0y" path="res://Assets/Game-Objects/Gameplay/Spring.tscn" id="4_5uwc7"]
 [ext_resource type="PackedScene" uid="uid://c7yr0rgy130wd" path="res://Assets/Game-Objects/Gameplay/EndLevel.tscn" id="5_f1mw3"]
+[ext_resource type="PackedScene" uid="uid://42lkirlbnhs0" path="res://Assets/Game-Objects/Gameplay/FeatherCoin.tscn" id="6_4movu"]
 [ext_resource type="Texture2D" uid="uid://bu0kst3abqa51" path="res://Assets/Art/Backgrounds/Tilemaps/flowersprop-Sheet.png" id="6_5q8ry"]
 [ext_resource type="Texture2D" uid="uid://jef68xkrlgu" path="res://Assets/Art/Backgrounds/Tilemaps/bushes-Sheet.png" id="7_vjd5c"]
 [ext_resource type="Texture2D" uid="uid://c7houk2thsvv" path="res://Assets/Art/Backgrounds/Tilemaps/bigbushes-Sheet.png" id="8_0c37q"]
@@ -174,6 +175,7 @@ scenes/1/scene = ExtResource("2_xcwrb")
 scenes/2/scene = ExtResource("3_gunpp")
 scenes/3/scene = ExtResource("4_5uwc7")
 scenes/4/scene = ExtResource("5_f1mw3")
+scenes/5/scene = ExtResource("6_4movu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2hrl"]
 texture = ExtResource("6_5q8ry")
@@ -330,9 +332,6 @@ texture_region_size = Vector2i(128, 128)
 0:0/3/physics_layer_0/angular_velocity = 0.0
 0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p25p8"]
-texture_region_size = Vector2i(128, 128)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4rdd"]
 texture = ExtResource("12_up5vs")
 texture_region_size = Vector2i(128, 128)
@@ -372,5 +371,4 @@ sources/7 = SubResource("TileSetAtlasSource_frf8y")
 sources/2 = SubResource("TileSetAtlasSource_h2hrl")
 sources/3 = SubResource("TileSetAtlasSource_8qagp")
 sources/4 = SubResource("TileSetAtlasSource_7qmnu")
-sources/8 = SubResource("TileSetAtlasSource_p25p8")
 sources/9 = SubResource("TileSetAtlasSource_a4rdd")

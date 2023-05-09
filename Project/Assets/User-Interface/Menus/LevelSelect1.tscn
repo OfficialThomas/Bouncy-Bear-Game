@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_3gm3f"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/LevelSelect.gd" id="1_mfada"]
-[ext_resource type="Theme" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_pxgn7"]
+[ext_resource type="Theme" uid="uid://dt22awaj6rh47" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_pxgn7"]
 
 [node name="LevelSelect1" type="Control"]
 layout_mode = 3
@@ -69,6 +69,12 @@ alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 
+[node name="Tutorial" type="Button" parent="VBoxContainer/LevelSelect/Levels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_pxgn7")
+text = "T"
+
 [node name="Level1" type="Button" parent="VBoxContainer/LevelSelect/Levels"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -114,6 +120,7 @@ layout_mode = 2
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 
+[connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelSelect/Levels/Level3" to="." method="_on_level_3_pressed"]

@@ -6,6 +6,7 @@ extends Control
 # Universal scene change (5 button layout)
 @export_file("*.tscn") var return_scene : String
 @export_file("*.tscn") var next_scene : String
+@export_file("*.tscn") var tutorial_scene: String
 @export_file("*.tscn") var level_1_scene : String
 @export_file("*.tscn") var level_2_scene : String
 @export_file("*.tscn") var level_3_scene : String
@@ -70,3 +71,12 @@ func _on_level_3_pressed():
 		transition.transition_to("res://Scenes/TestScene1.tscn")
 	else:
 		transition.transition_to(level_3_scene)
+
+
+func _on_tutorial_pressed():
+#	print("Transitioning to: " + level_1_scene)
+	if (tutorial_scene == ""):
+#		print("Scene name empty. Transitioning to test level.")
+		transition.transition_to("res://Scenes/TestScene1.tscn")
+	else:
+		transition.transition_to(tutorial_scene)
