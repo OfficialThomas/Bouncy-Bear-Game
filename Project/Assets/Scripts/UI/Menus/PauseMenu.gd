@@ -24,12 +24,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	visible = false
 	_levelname.clear()
 	_levelname.append_text(levelname.text_name)
 	restart_scene = get_tree().current_scene.scene_file_path #grabs the scene name for restarting
 	gameplay.process_mode = Node.PROCESS_MODE_PAUSABLE
 	ui.process_mode = Node.PROCESS_MODE_ALWAYS
-	position.y = -2000
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,12 +39,12 @@ func _process(_delta):
 
 
 func pauseMenu():
-	if position.y == -2000:
-		get_tree().paused = true
-		position.y = 0
-	else:
-		position.y = -2000
+	if visible:
+		visible = false
 		get_tree().paused = false
+	else:
+		visible = true
+		get_tree().paused = true
 
 
 func _on_continue_pressed():

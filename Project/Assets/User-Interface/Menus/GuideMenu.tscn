@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Menus/GuideMenu.gd" id="1_bq4ip"]
 [ext_resource type="StyleBox" uid="uid://dbgikrgvlejcm" path="res://Assets/User-Interface/Themes/Panels/Credits.tres" id="2_hg8au"]
-[ext_resource type="Theme" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_pujs5"]
+[ext_resource type="Theme" uid="uid://dt22awaj6rh47" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="3_pujs5"]
 
 [node name="GuideMenu" type="Control"]
 layout_mode = 3
@@ -73,6 +73,7 @@ fit_content = true
 layout_mode = 2
 
 [node name="Pause" type="RichTextLabel" parent="VBoxContainer/Contents/Panel/CreditNames"]
+clip_contents = false
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true

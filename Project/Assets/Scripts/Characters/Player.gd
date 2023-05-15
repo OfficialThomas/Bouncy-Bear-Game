@@ -22,6 +22,7 @@ var b_multi = 1.5
 var respawn
 @onready var checkpoint_text = get_node("../../UI/CheckpointNotif")
 var coins = 0
+var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,17 +33,6 @@ func _ready():
 		respawn = checkpoint.position
 
 func _physics_process(delta):
-	# Gravity and Auto Jump
-	if bounce == 1:
-		jump.play()
-		velocity.y = JUMP_VELOCITY * b_multi
-		bounce = 0
-	elif not is_on_floor():
-		velocity.y += gravity * delta
-	else:
-		jump.play()
-		velocity.y = JUMP_VELOCITY
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
@@ -51,21 +41,38 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	animatior(velocity.y)
-	move_and_slide()
-
-func animatior(fallingSpeed):
 	#	Directional animation state
 	var animation = "forward"
 	if Input.is_action_pressed("left"):
 		animation = "left"
 	elif Input.is_action_pressed("right"):
 		animation = "right"
-	if abs(fallingSpeed) < 100:
+	
+	# Constant gravity doesnt affect our gameplay and removes it from conditionals
+	velocity.y += gravity * delta
+	
+	# Vertical animation state and jump collision
+	if bounce == 1:
+		velocity.y = JUMP_VELOCITY * b_multi
+		bounce = 0
+		jump.play()
 		animation += "squish"
-	elif abs(fallingSpeed) < 300:
+		timer = 10
+	elif is_on_floor() or is_on_ceiling():
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		jump.play()
+		animation += "squish"
+		timer = 10
+	elif timer > 5:
+		animation += "squish"
+		timer -= 1
+	elif timer > 0:
 		animation += "middle"
+		timer -= 1
+	
 	sprite.play(animation)
+	move_and_slide()
 
 func checkpoint_activated():
 	sfx.stream = checksfx

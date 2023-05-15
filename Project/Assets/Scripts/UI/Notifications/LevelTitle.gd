@@ -3,8 +3,8 @@ extends Control
 @export_multiline var text_name
 
 # Reference to the _AnimationPlayer_ node
-@onready var _anim_player := $VBoxContainer/RichTextLabel/AnimationPlayer
-@onready var _text := $VBoxContainer/RichTextLabel
+@onready var _anim_player := $VBoxContainer/HBoxContainer/RichTextLabel/AnimationPlayer
+@onready var _text := $VBoxContainer/HBoxContainer/RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

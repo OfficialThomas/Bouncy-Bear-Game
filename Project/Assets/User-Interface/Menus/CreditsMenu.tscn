@@ -63,6 +63,7 @@ fit_content = true
 layout_mode = 2
 
 [node name="Godot" type="RichTextLabel" parent="VBoxContainer/Contents/Panel/CreditNames"]
+clip_contents = false
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
