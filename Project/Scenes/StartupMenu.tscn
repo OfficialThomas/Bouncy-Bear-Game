@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq0qh3ghj2j7t"]
 
 [ext_resource type="PackedScene" uid="uid://jfhhvp4bcj4j" path="res://Assets/User-Interface/Menu_Level.tscn" id="1_0082t"]
-[ext_resource type="PackedScene" uid="uid://s7e8nvikdbsw" path="res://Assets/User-Interface/Menus/MainMenu.tscn" id="1_fjilo"]
 [ext_resource type="PackedScene" uid="uid://iu8cr7tu0psa" path="res://Assets/User-Interface/BGM.tscn" id="1_i4kju"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_aol42"]
+[ext_resource type="PackedScene" uid="uid://d0ipyumolkuph" path="res://Assets/User-Interface/MainMenuManager.tscn" id="3_ucpvn"]
 
 [node name="StartupMenu" type="Node2D"]
 position = Vector2(-2, 0)
@@ -14,8 +14,8 @@ position = Vector2(-2, 0)
 
 [node name="BGM" parent="UI" instance=ExtResource("1_i4kju")]
 
-[node name="MainMenu" parent="UI" instance=ExtResource("1_fjilo")]
-guide_scene = "res://Scenes/GuideScene.tscn"
+[node name="MainMenuManager" parent="UI" instance=ExtResource("3_ucpvn")]
+select_scene = "res://Scenes/AreaSelectScene.tscn"
 
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("2_aol42")]
 offset_right = 0.0

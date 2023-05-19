@@ -40,9 +40,17 @@ func transition_to(_next_scene := next_scene_path) -> void:
 	# Changes the scene
 	get_tree().change_scene_to_file(_next_scene)
 
+
 func close_game() -> void:
 	# Plays the Fade animation and wait until it finishes
 	_anim_player.play_backwards("SlideRight")
 	await _anim_player.animation_finished
 	# Close the game window
 	get_tree().quit()
+
+
+func enter():
+	_anim_player.play("SlideLeft")
+
+func leave():
+	_anim_player.play_backwards("SlideRight")

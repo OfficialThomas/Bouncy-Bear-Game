@@ -1,14 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cre4er3kw3v0n"]
+[gd_scene load_steps=8 format=3 uid="uid://cre4er3kw3v0n"]
 
 [ext_resource type="PackedScene" uid="uid://dv41badn16e5h" path="res://Assets/Game-Objects/Gameplay/ParallaxBackground.tscn" id="1_xqvvh"]
 [ext_resource type="TileSet" uid="uid://dc1r1nl1nsmc7" path="res://Assets/Art/Backgrounds/Tilemaps/tilesetdefault.tres" id="2_wep7x"]
 [ext_resource type="PackedScene" uid="uid://bqgy81eendufk" path="res://Assets/Game-Objects/Characters/Player.tscn" id="3_ubict"]
 [ext_resource type="PackedScene" uid="uid://lebttegc47q0" path="res://Assets/Game-Objects/Gameplay/MainCamera.tscn" id="4_myaht"]
 [ext_resource type="PackedScene" uid="uid://iu8cr7tu0psa" path="res://Assets/User-Interface/BGM.tscn" id="5_kwe6o"]
-[ext_resource type="PackedScene" uid="uid://bwrc5mqn85afh" path="res://Assets/User-Interface/Notifications/CheckpointNotif.tscn" id="6_umboj"]
-[ext_resource type="PackedScene" uid="uid://bfx402sxhnnxt" path="res://Assets/User-Interface/Notifications/LevelName.tscn" id="7_3j6qw"]
-[ext_resource type="PackedScene" uid="uid://dfoqrti7bmk1u" path="res://Assets/User-Interface/Menus/PauseMenu.tscn" id="8_ae5qn"]
-[ext_resource type="PackedScene" uid="uid://crvh6i3q5a1p6" path="res://Assets/User-Interface/Menus/EndCardMenu.tscn" id="9_sx54h"]
+[ext_resource type="PackedScene" uid="uid://grkubh56v8bk" path="res://Assets/User-Interface/LevelUIManager.tscn" id="6_ftcgb"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="10_xuim6"]
 
 [node name="Level1-T" type="Node2D"]
@@ -65,18 +62,63 @@ tilemap = NodePath("../../TileMap")
 [node name="BGM" parent="UI" instance=ExtResource("5_kwe6o")]
 songNum = 1
 
-[node name="CheckpointNotif" parent="UI" instance=ExtResource("6_umboj")]
+[node name="LevelUIManager" parent="UI" instance=ExtResource("6_ftcgb")]
+level_name = "[center]1-T
 
-[node name="LevelName" parent="UI" instance=ExtResource("7_3j6qw")]
-text_name = "[center]1-T
+The Tutorial
 
-The Tutorial[center]"
-
-[node name="PauseMenu" parent="UI" instance=ExtResource("8_ae5qn")]
-level_select = "res://Scenes/Area1Scene.tscn"
-metadata/_edit_use_anchors_ = true
-
-[node name="EndCardMenu" parent="UI" instance=ExtResource("9_sx54h")]
+"
+level_select = "res://Scenes/AreaSelectScene.tscn"
 next_level = "res://Scenes/Level1-1.tscn"
 
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("10_xuim6")]
+
+[connection signal="body_entered" from="Gameplay/TileMap/FeatherCoin" to="Gameplay/TileMap/FeatherCoin" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150954" to="Gameplay/TileMap/@FeatherCoin@150954" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150955" to="Gameplay/TileMap/@FeatherCoin@150955" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150956" to="Gameplay/TileMap/@FeatherCoin@150956" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/Spring" to="Gameplay/TileMap/Spring" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150957" to="Gameplay/TileMap/@FeatherCoin@150957" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150958" to="Gameplay/TileMap/@FeatherCoin@150958" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150959" to="Gameplay/TileMap/@FeatherCoin@150959" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/Checkpoint" to="Gameplay/TileMap/Checkpoint" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@150960" to="Gameplay/TileMap/@Spring@150960" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150961" to="Gameplay/TileMap/@FeatherCoin@150961" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150962" to="Gameplay/TileMap/@FeatherCoin@150962" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150963" to="Gameplay/TileMap/@FeatherCoin@150963" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150964" to="Gameplay/TileMap/@FeatherCoin@150964" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Checkpoint@150965" to="Gameplay/TileMap/@Checkpoint@150965" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150966" to="Gameplay/TileMap/@FeatherCoin@150966" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spring@150967" to="Gameplay/TileMap/@Spring@150967" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/Spike" to="Gameplay/TileMap/Spike" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150968" to="Gameplay/TileMap/@Spike@150968" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150969" to="Gameplay/TileMap/@FeatherCoin@150969" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150970" to="Gameplay/TileMap/@Spike@150970" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150971" to="Gameplay/TileMap/@Spike@150971" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150972" to="Gameplay/TileMap/@Spike@150972" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150973" to="Gameplay/TileMap/@Spike@150973" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150974" to="Gameplay/TileMap/@FeatherCoin@150974" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150975" to="Gameplay/TileMap/@Spike@150975" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150976" to="Gameplay/TileMap/@Spike@150976" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150977" to="Gameplay/TileMap/@Spike@150977" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150978" to="Gameplay/TileMap/@FeatherCoin@150978" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150979" to="Gameplay/TileMap/@Spike@150979" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150980" to="Gameplay/TileMap/@Spike@150980" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150981" to="Gameplay/TileMap/@Spike@150981" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150982" to="Gameplay/TileMap/@Spike@150982" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150983" to="Gameplay/TileMap/@Spike@150983" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150984" to="Gameplay/TileMap/@FeatherCoin@150984" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150985" to="Gameplay/TileMap/@Spike@150985" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150986" to="Gameplay/TileMap/@FeatherCoin@150986" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150987" to="Gameplay/TileMap/@Spike@150987" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150988" to="Gameplay/TileMap/@Spike@150988" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150989" to="Gameplay/TileMap/@Spike@150989" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150990" to="Gameplay/TileMap/@Spike@150990" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150991" to="Gameplay/TileMap/@FeatherCoin@150991" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@Spike@150992" to="Gameplay/TileMap/@Spike@150992" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150993" to="Gameplay/TileMap/@FeatherCoin@150993" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150994" to="Gameplay/TileMap/@FeatherCoin@150994" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150995" to="Gameplay/TileMap/@FeatherCoin@150995" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/EndLevel" to="Gameplay/TileMap/EndLevel" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150996" to="Gameplay/TileMap/@FeatherCoin@150996" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Gameplay/TileMap/@FeatherCoin@150997" to="Gameplay/TileMap/@FeatherCoin@150997" method="_on_body_entered" flags=18]

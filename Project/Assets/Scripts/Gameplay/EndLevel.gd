@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var endCard = get_node("../../../UI/EndCardMenu")
+@onready var endCard = get_node("../../../UI/LevelUIManager")
 
 
 # Called when the node enters the scene tree for the first time.

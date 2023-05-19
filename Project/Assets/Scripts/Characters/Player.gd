@@ -18,11 +18,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Gameplay elements
 var bounce = 0
 var b_multi = 1.5
-@export var checkpoint : Area2D
-var respawn
-@onready var checkpoint_text = get_node("../../UI/CheckpointNotif")
+@export var f_fallspeed = 100
+var activeFfall = false
 var coins = 0
 var timer = 0
+var respawn
+var checkpoint : Area2D
+@onready var checkpoint_text = get_node("../../UI/LevelUIManager")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +43,12 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+	# Fast fall
+	if not is_on_floor() and Input.is_action_just_pressed("down"):
+		if !activeFfall and velocity.y < 400:
+			velocity.y = f_fallspeed
+			activeFfall = true
+	
 	#	Directional animation state
 	var animation = "forward"
 	if Input.is_action_pressed("left"):
@@ -58,9 +66,11 @@ func _physics_process(delta):
 		jump.play()
 		animation += "squish"
 		timer = 10
+		activeFfall = false
 	elif is_on_floor() or is_on_ceiling():
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			activeFfall = false
 		jump.play()
 		animation += "squish"
 		timer = 10

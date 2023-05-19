@@ -93,6 +93,7 @@ height = 112.286
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.75, 1.75)
 script = ExtResource("1_rmwdv")
+f_fallspeed = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cluag")
