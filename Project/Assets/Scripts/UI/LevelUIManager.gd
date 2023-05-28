@@ -77,7 +77,7 @@ func pauseMenu():
 
 func endCard():
 	bgm.end_level()
-	pause_card.visible = true
+	end_card.visible = true
 	get_tree().paused = true 
 
 

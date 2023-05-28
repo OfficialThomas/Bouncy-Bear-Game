@@ -45,7 +45,7 @@ func _physics_process(delta):
 	
 	# Fast fall
 	if not is_on_floor() and Input.is_action_just_pressed("down"):
-		if !activeFfall and velocity.y < 400:
+		if !activeFfall:
 			velocity.y = f_fallspeed
 			activeFfall = true
 	
@@ -67,10 +67,11 @@ func _physics_process(delta):
 		animation += "squish"
 		timer = 10
 		activeFfall = false
-	elif is_on_floor() or is_on_ceiling():
-		if is_on_floor():
+	elif is_on_floor() or is_on_ceiling() or bounce == 2:
+		if is_on_floor() or bounce == 2:
 			velocity.y = JUMP_VELOCITY
 			activeFfall = false
+		bounce = 0
 		jump.play()
 		animation += "squish"
 		timer = 10

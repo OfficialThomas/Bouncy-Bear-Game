@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3mll58dk5m1l"]
+
+[ext_resource type="Texture2D" uid="uid://de5wfjlt7gr5g" path="res://Assets/Art/Backgrounds/Tilemaps/grasstilemapP.png" id="1_0vr1m"]
+[ext_resource type="Script" path="res://Assets/Scripts/Gameplay/DestructiblePlatform.gd" id="1_1b4ng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ofc"]
+size = Vector2(379, 131)
+
+[node name="DestructiblePlatform" type="Area2D"]
+modulate = Color(1, 0.101961, 0.101961, 1)
+script = ExtResource("1_1b4ng")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.99, 0.34)
+texture = ExtResource("1_0vr1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l2ofc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

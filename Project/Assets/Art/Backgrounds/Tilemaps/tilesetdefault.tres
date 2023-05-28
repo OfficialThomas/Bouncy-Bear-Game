@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://dc1r1nl1nsmc7"]
+[gd_resource type="TileSet" load_steps=26 format=3 uid="uid://dc1r1nl1nsmc7"]
 
 [ext_resource type="Texture2D" uid="uid://dp4n33dupjfk0" path="res://Assets/Art/Backgrounds/Tilemaps/test_tilemap-Sheet.png" id="1_ej171"]
 [ext_resource type="PackedScene" uid="uid://cnbu1eucygsch" path="res://Assets/Game-Objects/Gameplay/Spike.tscn" id="2_xcwrb"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://jef68xkrlgu" path="res://Assets/Art/Backgrounds/Tilemaps/bushes-Sheet.png" id="7_vjd5c"]
 [ext_resource type="PackedScene" uid="uid://cwv5sxspuqvcj" path="res://Assets/Game-Objects/Gameplay/UpsideDownSpikes.tscn" id="7_wu72t"]
 [ext_resource type="Texture2D" uid="uid://c7houk2thsvv" path="res://Assets/Art/Backgrounds/Tilemaps/bigbushes-Sheet.png" id="8_0c37q"]
+[ext_resource type="PackedScene" uid="uid://cagvt542kkdrv" path="res://Assets/Game-Objects/Gameplay/OneWayPlatform.tscn" id="8_2hij8"]
 [ext_resource type="Texture2D" uid="uid://de5wfjlt7gr5g" path="res://Assets/Art/Backgrounds/Tilemaps/grasstilemapP.png" id="9_6fckx"]
+[ext_resource type="PackedScene" uid="uid://c3mll58dk5m1l" path="res://Assets/Game-Objects/Gameplay/DestructiblePlatform.tscn" id="9_bue3e"]
 [ext_resource type="Texture2D" uid="uid://vgxb1y4a8hcc" path="res://Assets/Art/Backgrounds/Tilemaps/grasstilerampP1.png" id="10_7pjt3"]
 [ext_resource type="Texture2D" uid="uid://hag4gixqt3sd" path="res://Assets/Art/Backgrounds/Tilemaps/grasstilerampP2.png" id="11_lpkmr"]
 [ext_resource type="Texture2D" uid="uid://dtntvplipgleb" path="res://Assets/Art/Backgrounds/Tilemaps/flowersbig-Sheet.png" id="12_up5vs"]
@@ -178,6 +180,8 @@ scenes/3/scene = ExtResource("4_5uwc7")
 scenes/4/scene = ExtResource("5_f1mw3")
 scenes/5/scene = ExtResource("6_4movu")
 scenes/6/scene = ExtResource("7_wu72t")
+scenes/7/scene = ExtResource("8_2hij8")
+scenes/9/scene = ExtResource("9_bue3e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2hrl"]
 texture = ExtResource("6_5q8ry")

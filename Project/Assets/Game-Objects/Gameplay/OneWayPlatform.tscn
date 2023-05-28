@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cagvt542kkdrv"]
+
+[ext_resource type="Texture2D" uid="uid://de5wfjlt7gr5g" path="res://Assets/Art/Backgrounds/Tilemaps/grasstilemapP.png" id="1_7j26q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7450w"]
+size = Vector2(384, 388)
+
+[node name="OneWayPlatform" type="StaticBody2D"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7j26q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7450w")
+one_way_collision = true

@@ -16,6 +16,8 @@
 [node name="LevelSelect1" parent="UI" instance=ExtResource("1_te5k7")]
 tutorial_scene = "res://Scenes/Level1-T.tscn"
 level_1_scene = "res://Scenes/Level1-1.tscn"
+level_2_scene = "res://Scenes/Level1-2.tscn"
+level_3_scene = "res://Scenes/Level1-3.tscn"
 
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("2_5jq1a")]
 offset_right = 0.0
