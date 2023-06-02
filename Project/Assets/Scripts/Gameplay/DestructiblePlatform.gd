@@ -24,4 +24,4 @@ func _on_body_entered(body):
 		player.bounce = 2
 		modulate.a = 0.5
 		enabled = false
-		timer = 1000
+		timer = 500

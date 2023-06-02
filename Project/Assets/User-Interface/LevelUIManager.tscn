@@ -1,8 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://grkubh56v8bk"]
+[gd_scene load_steps=13 format=3 uid="uid://grkubh56v8bk"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/LevelUIManager.gd" id="1_0c62w"]
 [ext_resource type="Theme" uid="uid://dt22awaj6rh47" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="2_n8wle"]
 [ext_resource type="FontFile" uid="uid://elp7o4t3i2jp" path="res://Assets/User-Interface/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="3_8ustl"]
+[ext_resource type="Texture2D" uid="uid://b0i0gc3n5ynvy" path="res://Assets/Art/Props/gameplay/feather1.png" id="4_0u13v"]
+[ext_resource type="Texture2D" uid="uid://cym6ww6hotcvf" path="res://Assets/Art/Props/gameplay/feather2.png" id="5_55veb"]
+[ext_resource type="Texture2D" uid="uid://co87xqwhte64b" path="res://Assets/Art/Props/gameplay/feather3.png" id="6_4wloe"]
+[ext_resource type="Texture2D" uid="uid://tp2emloy833j" path="res://Assets/Art/Props/gameplay/feather4.png" id="7_v65pm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_merrm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0u13v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_55veb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4wloe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v65pm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="Animation" id="Animation_bnge3"]
 resource_name = "FadeIn"
@@ -60,6 +84,64 @@ Level Name Here
 
 "
 level_select = "res://Scenes/Area1Scene.tscn"
+
+[node name="CoinsCollected" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CoinsCollected"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CoinsCollected/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CoinsCollected/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CoinsCollected/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CoinsCollected/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CoinsCollected/VBoxContainer/HBoxContainer/Control"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_merrm")
+centered = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="CoinsCollected/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CoinsCollected/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CoinsCollected/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CoinsCollected/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_8ustl")
+theme_override_font_sizes/normal_font_size = 45
+text = "0
+"
+fit_content = true
 
 [node name="CheckpointNotif" type="Control" parent="."]
 layout_mode = 1

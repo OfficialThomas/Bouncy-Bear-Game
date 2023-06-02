@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0ipyumolkuph"]
 
-[ext_resource type="Texture2D" uid="uid://nw51dsnvsjh7" path="res://Assets/Art/Props/test/test_object6.png" id="1_q1a85"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/MainMenuManager.gd" id="1_ym784"]
+[ext_resource type="FontFile" uid="uid://elp7o4t3i2jp" path="res://Assets/User-Interface/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="2_8qxfp"]
 [ext_resource type="Theme" uid="uid://dt22awaj6rh47" path="res://Assets/User-Interface/Themes/ButtonTheme.tres" id="2_otg6s"]
 [ext_resource type="StyleBox" uid="uid://dbgikrgvlejcm" path="res://Assets/User-Interface/Themes/Panels/Credits.tres" id="3_kb2v6"]
 
@@ -44,25 +44,18 @@ theme_override_constants/separation = 18
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/HBoxContainer/MainScreen"]
 layout_mode = 2
 
-[node name="TitleBox" type="NinePatchRect" parent="MainMenu/HBoxContainer/MainScreen"]
+[node name="TitleBox" type="VBoxContainer" parent="MainMenu/HBoxContainer/MainScreen"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
-texture = ExtResource("1_q1a85")
-region_rect = Rect2(-353, -89.5, 507, 233)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/HBoxContainer/MainScreen/TitleBox"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_8qxfp")
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center]Bouncy Bear[/center]"
+text = "Bouncy
+	Bear"
 fit_content = true
 
 [node name="StartSettings" type="VBoxContainer" parent="MainMenu/HBoxContainer/MainScreen"]

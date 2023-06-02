@@ -4,6 +4,10 @@ extends Control
 #	https://docs.godotengine.org/en/stable/tutorials/scripting/pausing_games.html#pause-menu-example
 #	https://godotengine.org/qa/32219/gdscript-get-resource-path-of-current-scene-tscn
 
+#Grab the player for coin points
+@onready var player = get_node("../../Gameplay/Player")
+@onready var coin_count = $CoinsCollected/VBoxContainer/HBoxContainer/VBoxContainer/RichTextLabel
+
 # Edit the title name and grab title node path
 @export_multiline var level_name
 @onready var title_pause = $PauseMenu/System/PausedText/Level
@@ -51,6 +55,8 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
+	coin_count.clear()
+	coin_count.append_text(str(player.coins))
 
 
 func _fade_text(delay: float):

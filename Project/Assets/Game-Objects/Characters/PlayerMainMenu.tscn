@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://c6w0rek24syim"]
+
+[ext_resource type="Script" path="res://Assets/Game-Objects/Characters/PlayerMainMenu.gd" id="1_g226o"]
+[ext_resource type="Texture2D" uid="uid://cla5hrf732png" path="res://Assets/Art/Characters/player/BouncyBearP1.png" id="2_7aos2"]
+[ext_resource type="Texture2D" uid="uid://u6syrbpx5l2h" path="res://Assets/Art/Characters/player/BouncyBearP2.png" id="3_ntark"]
+[ext_resource type="Texture2D" uid="uid://b72jyw3awogi2" path="res://Assets/Art/Characters/player/BouncyBearP3.png" id="4_tkf05"]
+[ext_resource type="Texture2D" uid="uid://bjy7wvqewug2m" path="res://Assets/Art/Characters/player/BouncyBearPL1.png" id="5_yc2qy"]
+[ext_resource type="Texture2D" uid="uid://hod8kxihqnkg" path="res://Assets/Art/Characters/player/BouncyBearPL2.png" id="6_vsndr"]
+[ext_resource type="Texture2D" uid="uid://crm5s3b3aqs2b" path="res://Assets/Art/Characters/player/BouncyBearPL3.png" id="7_xbjdk"]
+[ext_resource type="Texture2D" uid="uid://d8ntbnkbvo40" path="res://Assets/Art/Characters/player/BouncyBearPR1.png" id="8_ipbmy"]
+[ext_resource type="Texture2D" uid="uid://c6gknt2wt763c" path="res://Assets/Art/Characters/player/BouncyBearPR2.png" id="9_1ftfv"]
+[ext_resource type="Texture2D" uid="uid://bn1ahwma48ap8" path="res://Assets/Art/Characters/player/BouncyBearPR3.png" id="10_ofogi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cluag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7aos2")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ntark")
+}],
+"loop": true,
+"name": &"forwardmiddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tkf05")
+}],
+"loop": true,
+"name": &"forwardsquish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yc2qy")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vsndr")
+}],
+"loop": true,
+"name": &"leftmiddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xbjdk")
+}],
+"loop": true,
+"name": &"leftsquish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ipbmy")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1ftfv")
+}],
+"loop": true,
+"name": &"rightmiddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ofogi")
+}],
+"loop": true,
+"name": &"rightsquish",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsw54"]
+radius = 33.5
+height = 112.286
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_g226o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cluag")
+animation = &"forward"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 5)
+shape = SubResource("CapsuleShape2D_fsw54")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Sfx" type="AudioStreamPlayer2D" parent="."]

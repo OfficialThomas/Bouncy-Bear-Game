@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq0qh3ghj2j7t"]
+[gd_scene load_steps=6 format=3 uid="uid://dq0qh3ghj2j7t"]
 
 [ext_resource type="PackedScene" uid="uid://jfhhvp4bcj4j" path="res://Assets/User-Interface/Menu_Level.tscn" id="1_0082t"]
 [ext_resource type="PackedScene" uid="uid://iu8cr7tu0psa" path="res://Assets/User-Interface/BGM.tscn" id="1_i4kju"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_aol42"]
+[ext_resource type="PackedScene" uid="uid://c6w0rek24syim" path="res://Assets/Game-Objects/Characters/PlayerMainMenu.tscn" id="2_sqt1y"]
 [ext_resource type="PackedScene" uid="uid://d0ipyumolkuph" path="res://Assets/User-Interface/MainMenuManager.tscn" id="3_ucpvn"]
 
 [node name="StartupMenu" type="Node2D"]
@@ -10,12 +11,15 @@ position = Vector2(-2, 0)
 
 [node name="MenuLevel" parent="." instance=ExtResource("1_0082t")]
 
+[node name="Player" parent="." instance=ExtResource("2_sqt1y")]
+position = Vector2(300, 250)
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="BGM" parent="UI" instance=ExtResource("1_i4kju")]
 
 [node name="MainMenuManager" parent="UI" instance=ExtResource("3_ucpvn")]
-select_scene = "res://Scenes/AreaSelectScene.tscn"
+select_scene = "res://Scenes/Cutscene1.tscn"
 
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("2_aol42")]
 offset_right = 0.0

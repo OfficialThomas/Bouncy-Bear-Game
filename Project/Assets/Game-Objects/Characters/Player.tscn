@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqgy81eendufk"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Characters/Player.gd" id="1_rmwdv"]
 [ext_resource type="Texture2D" uid="uid://cla5hrf732png" path="res://Assets/Art/Characters/player/BouncyBearP1.png" id="2_wbdfw"]
