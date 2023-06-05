@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://intipy5l0hu6"]
+[gd_scene load_steps=6 format=3 uid="uid://intipy5l0hu6"]
 
 [ext_resource type="PackedScene" uid="uid://b0w3cedkqaqaa" path="res://Assets/User-Interface/Cutscene.tscn" id="1_0a75r"]
 [ext_resource type="PackedScene" uid="uid://eopnjeralfpo" path="res://Assets/User-Interface/Transition.tscn" id="2_fnjl5"]
+[ext_resource type="Texture2D" uid="uid://dxiemw1ipeyu6" path="res://Assets/Art/Cutscene/panel1.png" id="2_ysgol"]
+[ext_resource type="Texture2D" uid="uid://drmjmf4mpsmms" path="res://Assets/Art/Cutscene/panel2.png" id="3_v27rp"]
+[ext_resource type="Texture2D" uid="uid://ddopmlixlus0w" path="res://Assets/Art/Cutscene/panel3.png" id="4_tfkd2"]
 
 [node name="Cutscene1" type="Node2D"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Cutscene" parent="UI" instance=ExtResource("1_0a75r")]
+panel_one = ExtResource("2_ysgol")
+panel_two = ExtResource("3_v27rp")
+panel_three = ExtResource("4_tfkd2")
 
 [node name="SceneTransitionRect" parent="UI" instance=ExtResource("2_fnjl5")]

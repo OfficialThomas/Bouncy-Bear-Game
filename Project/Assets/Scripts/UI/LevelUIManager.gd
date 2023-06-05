@@ -6,7 +6,8 @@ extends Control
 
 #Grab the player for coin points
 @onready var player = get_node("../../Gameplay/Player")
-@onready var coin_count = $CoinsCollected/VBoxContainer/HBoxContainer/VBoxContainer/RichTextLabel
+@onready var coin_countC = $CoinsCollected/VBoxContainer/HBoxContainer/VBoxContainer/RichTextLabel
+@onready var coin_countP = $PauseMenu/System/PausedText/HBoxContainer/VBoxContainer/RichTextLabel
 
 # Edit the title name and grab title node path
 @export_multiline var level_name
@@ -26,6 +27,7 @@ extends Control
 @onready var ui = get_node("../../UI")
 @onready var pause_card = $PauseMenu
 @onready var end_card = $EndCardMenu
+@onready var coins_card = $CoinsCollected
 
 # Universal scene change
 @export_file("*.tscn") var level_select : String
@@ -55,8 +57,8 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
-	coin_count.clear()
-	coin_count.append_text(str(player.coins))
+	coin_countC.clear()
+	coin_countC.append_text(str(player.coins))
 
 
 func _fade_text(delay: float):
@@ -78,13 +80,15 @@ func pauseMenu():
 		pause_card.visible = false
 		get_tree().paused = false
 	else:
+		coin_countP.clear()
+		coin_countP.append_text(str(player.coins))
 		pause_card.visible = true
 		get_tree().paused = true
 
 func endCard():
 	bgm.end_level()
 	end_card.visible = true
-	get_tree().paused = true 
+	get_tree().paused = true
 
 
 func _on_continue_pressed():

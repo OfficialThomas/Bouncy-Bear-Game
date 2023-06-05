@@ -14,6 +14,7 @@
 [node name="BGM" parent="UI" instance=ExtResource("1_3fhby")]
 
 [node name="LevelSelect1" parent="UI" instance=ExtResource("1_te5k7")]
+return_scene = "res://Scenes/Cutscene1.tscn"
 tutorial_scene = "res://Scenes/Level1-T.tscn"
 level_1_scene = "res://Scenes/Level1-1.tscn"
 level_2_scene = "res://Scenes/Level1-2.tscn"
