@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dv41badn16e5h" path="res://Assets/Game-Objects/Gameplay/ParallaxBackground.tscn" id="1_xqvvh"]
 [ext_resource type="TileSet" uid="uid://dc1r1nl1nsmc7" path="res://Assets/Art/Backgrounds/Tilemaps/tilesetdefault.tres" id="2_wep7x"]
-[ext_resource type="PackedScene" uid="uid://bqgy81eendufk" path="res://Assets/Game-Objects/Characters/Player.tscn" id="3_ubict"]
+[ext_resource type="PackedScene" path="res://Assets/Game-Objects/Characters/Player.tscn" id="3_ubict"]
 [ext_resource type="PackedScene" uid="uid://lebttegc47q0" path="res://Assets/Game-Objects/Gameplay/MainCamera.tscn" id="4_myaht"]
 [ext_resource type="PackedScene" uid="uid://iu8cr7tu0psa" path="res://Assets/User-Interface/BGM.tscn" id="5_kwe6o"]
 [ext_resource type="PackedScene" uid="uid://grkubh56v8bk" path="res://Assets/User-Interface/LevelUIManager.tscn" id="6_ftcgb"]
@@ -63,7 +63,7 @@ tilemap = NodePath("../../TileMap")
 songNum = 1
 
 [node name="LevelUIManager" parent="UI" instance=ExtResource("6_ftcgb")]
-level_name = "[center]1-T
+level_name = "[center]1-1
 
 The Tutorial
 

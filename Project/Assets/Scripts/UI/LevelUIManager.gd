@@ -8,6 +8,7 @@ extends Control
 @onready var player = get_node("../../Gameplay/Player")
 @onready var coin_countC = $CoinsCollected/VBoxContainer/HBoxContainer/VBoxContainer/RichTextLabel
 @onready var coin_countP = $PauseMenu/System/PausedText/HBoxContainer/VBoxContainer/RichTextLabel
+@onready var coin_countE = $EndCardMenu/HBoxContainer/Contents/HBoxContainer/VBoxContainer/RichTextLabel
 
 # Edit the title name and grab title node path
 @export_multiline var level_name
@@ -78,16 +79,21 @@ func checkpoint_activated():
 func pauseMenu():
 	if pause_card.visible:
 		pause_card.visible = false
+		coins_card.visible = true
 		get_tree().paused = false
 	else:
 		coin_countP.clear()
 		coin_countP.append_text(str(player.coins))
 		pause_card.visible = true
+		coins_card.visible = false
 		get_tree().paused = true
 
 func endCard():
 	bgm.end_level()
+	coin_countE.clear()
+	coin_countE.append_text(str(player.coins))
 	end_card.visible = true
+	coins_card.visible = false
 	get_tree().paused = true
 
 
